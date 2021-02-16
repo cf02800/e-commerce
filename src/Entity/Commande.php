@@ -75,5 +75,82 @@ class Commande
      */
     private $statutCommande;
 
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getDate(): ?\DateTimeInterface
+    {
+        return $this->date;
+    }
+
+    public function setDate(\DateTimeInterface $date): self
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    public function getFraisDePort(): ?float
+    {
+        return $this->fraisDePort;
+    }
+
+    public function setFraisDePort(float $fraisDePort): self
+    {
+        $this->fraisDePort = $fraisDePort;
+
+        return $this;
+    }
+
+    public function getClient(): ?Client
+    {
+        return $this->client;
+    }
+
+    public function setClient(?Client $client): self
+    {
+        $this->client = $client;
+
+        return $this;
+    }
+
+    public function getModePaiement(): ?ModePaiement
+    {
+        return $this->modePaiement;
+    }
+
+    public function setModePaiement(?ModePaiement $modePaiement): self
+    {
+        $this->modePaiement = $modePaiement;
+
+        return $this;
+    }
+
+    public function getAdresse(): ?Adresse
+    {
+        return $this->adresse;
+    }
+
+    public function setAdresse(?Adresse $adresse): self
+    {
+        $this->adresse = $adresse;
+
+        return $this;
+    }
+
+    public function getStatutCommande(): ?StatutCommande
+    {
+        return $this->statutCommande;
+    }
+
+    public function setStatutCommande(?StatutCommande $statutCommande): self
+    {
+        $this->statutCommande = $statutCommande;
+
+        return $this;
+    }
+
 
 }

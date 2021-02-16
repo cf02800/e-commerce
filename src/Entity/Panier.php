@@ -35,5 +35,34 @@ class Panier
      */
     private $panier;
 
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getClientId(): ?int
+    {
+        return $this->clientId;
+    }
+
+    public function setClientId(int $clientId): self
+    {
+        $this->clientId = $clientId;
+
+        return $this;
+    }
+
+    public function getPanier(): ?array
+    {
+        return $this->panier;
+    }
+
+    public function setPanier(array $panier): self
+    {
+        $this->panier = $panier;
+
+        return $this;
+    }
+
 
 }

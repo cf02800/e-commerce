@@ -42,5 +42,46 @@ class LigneDeCommande
      */
     private $qte;
 
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getArticleId(): ?int
+    {
+        return $this->articleId;
+    }
+
+    public function setArticleId(?int $articleId): self
+    {
+        $this->articleId = $articleId;
+
+        return $this;
+    }
+
+    public function getCommandeId(): ?int
+    {
+        return $this->commandeId;
+    }
+
+    public function setCommandeId(?int $commandeId): self
+    {
+        $this->commandeId = $commandeId;
+
+        return $this;
+    }
+
+    public function getQte(): ?int
+    {
+        return $this->qte;
+    }
+
+    public function setQte(?int $qte): self
+    {
+        $this->qte = $qte;
+
+        return $this;
+    }
+
 
 }
