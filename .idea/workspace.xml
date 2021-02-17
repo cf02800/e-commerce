@@ -20,14 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca936695-dcb5-4603-baad-e5e604f02250" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -160,6 +160,11 @@
       <option name="presentableId" value="Default" />
       <updated>1613380148871</updated>
       <workItem from="1613380150348" duration="2309000" />
+      <workItem from="1613479614123" duration="1090000" />
+      <workItem from="1613506452087" duration="9000" />
+      <workItem from="1613552212063" duration="2481000" />
+      <workItem from="1613555292590" duration="602000" />
+      <workItem from="1613569440412" duration="835000" />
     </task>
     <servers />
   </component>
@@ -176,5 +181,12 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1180" y="246" key="NewPhpClassDialog" timestamp="1613554314147">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1180" y="246" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613554314147" />
   </component>
 </project>
