@@ -3,6 +3,11 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Client
@@ -10,14 +15,14 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="client", uniqueConstraints={@ORM\UniqueConstraint(name="UNIQ_C7440455E7927C74", columns={"email"})})
  * @ORM\Entity
  */
-class Client
+class Client implements UserInterface
 {
     /**
      * @var int
      *
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
@@ -25,6 +30,8 @@ class Client
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=180, nullable=false)
+     * @Assert\NotBlank()
+     * @Assert\Email()
      */
     private $email;
 
@@ -32,6 +39,7 @@ class Client
      * @var string
      *
      * @ORM\Column(name="nom", type="string", length=255, nullable=false)
+     * @Assert\NotBlank()
      */
     private $nom;
 
@@ -39,6 +47,7 @@ class Client
      * @var string
      *
      * @ORM\Column(name="prenom", type="string", length=255, nullable=false)
+     * @Assert\NotBlank()
      */
     private $prenom;
 
@@ -121,7 +130,27 @@ class Client
         return $this;
     }
 
+    /**
+     * @see UserInterface
+     */
+    public function getSalt()
+    {
+        // not needed when using the "bcrypt" algorithm in security.yaml
+    }
 
+    /**
+     * @see UserInterface
+     */
+    public function eraseCredentials()
+    {
+        // If you store any temporary, sensitive data on the user, clear it here
+        // $this->plainPassword = null;
+    }
+
+    public function getUsername()
+    {
+        return $this->email;
+    }
 
 
 }
