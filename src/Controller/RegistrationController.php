@@ -46,4 +46,6 @@ class RegistrationController extends AbstractController
             array('form' => $form->createView())
         );
     }
+
+
 }

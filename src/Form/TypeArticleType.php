@@ -22,7 +22,7 @@ class TypeArticleType extends AbstractType
                 'choice_label' => function(Categorie $c) {
                     return sprintf('%s', $c->getLibelle());
                 },
-                'placeholder' => "Catégorie"
+                'placeholder' => ""
             ])
         ;
     }
