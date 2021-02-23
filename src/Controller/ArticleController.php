@@ -7,6 +7,7 @@ use App\Form\ArticleType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -117,5 +118,36 @@ class ArticleController extends AbstractController
             'form' => $form->createView()
         ]);
 
+    }
+
+    /**
+     * @Route("/article/{id}/delete", name="article_delete")
+     * @return RedirectResponse
+     */
+    public function delete(Article $article): RedirectResponse
+    {
+
+        $oldImage = $article->getImage();
+        unlink($this->getParameter('images_dossier').'/'.$oldImage);
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove($article);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('article_admin');
+
+    }
+
+    /**
+     * @Route("/admin/articles", name="article_admin")
+     */
+    public function getAllArticles(){
+        $articles = $this->getDoctrine()
+            ->getRepository(Article::class)
+            ->findAll();
+
+        return $this->render('article_admin/list.html.twig', [
+            'articles' => $articles
+        ]);
     }
 }
