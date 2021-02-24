@@ -35,25 +35,7 @@ class ArticleController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            /** @var UploadedFile $imageFile */
-            $imageFile = $form->get('image')->getData();
 
-            if ($imageFile) {
-                $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
-                // this is needed to safely include the file name as part of the URL
-                $safeFilename = $slugger->slug($originalFilename);
-                $newFilename = $safeFilename . '-' . uniqid() . '.' . $imageFile->guessExtension();
-
-                try {
-                    $imageFile->move(
-                        $this->getParameter('images_dossier'),
-                        $newFilename
-                    );
-                } catch (FileException $e) {
-                }
-
-                $article->setImage($newFilename);
-            }
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($article);
             $entityManager->flush();
@@ -64,6 +46,21 @@ class ArticleController extends AbstractController
 
             return $this->render('article/create.html.twig', [
                 'form' => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @Route("/article/{id}", name="article_show")
+     */
+
+    public function show(int $id) : Response {
+        $article = $this->getDoctrine()
+            ->getRepository(Article::class)
+            ->find($id);
+
+        return $this->render('article/show.html.twig', [
+            'article' => $article,
+            'dossierImage' => $this->getParameter('images_dossier'),
         ]);
     }
 

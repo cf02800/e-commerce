@@ -22,20 +22,7 @@ class ArticleType extends AbstractType
             ->add('libelle', TextType::class)
             ->add('description', TextareaType::class)
             ->add('prixU', MoneyType::class)
-            ->add('image', FileType::class, [
-                'label' => 'Image',
-                'mapped' => false,
-                'required' => true,
-                'constraints' => [
-                    new File([
-                        'mimeTypes' => [
-                            'image/png',
-                            'image/jpeg',
-                        ],
-                        'mimeTypesMessage' => 'Please upload a valid PNG/JPEG image',
-                    ])
-                ],
-                ])
+            ->add('imageFile', FileType::class)
             ->add('typeArticle', EntityType::class, [
                 'class' => TypeArticle::class,
                 'choice_label' => function(TypeArticle $t) {
