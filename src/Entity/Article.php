@@ -3,10 +3,16 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Vich\UploaderBundle\Entity\File as EmbeddedFile;
+use App\Entity\TypeArticle;
 
 /**
  * Article
  *
+ * @Vich\Uploadable
  * @ORM\Table(name="article", indexes={@ORM\Index(name="IDX_23A0E666F9750B9", columns={"type_article_id"})})
  * @ORM\Entity
  */
@@ -43,14 +49,23 @@ class Article
     private $prixU;
 
     /**
-     * @var string
+     * NOTE: This is not a mapped field of entity metadata, just a simple property.
      *
-     * @ORM\Column(name="image", type="string", length=255, nullable=false)
+     * @Vich\UploadableField(mapping="property_image", fileNameProperty="image.name", size="image.size", mimeType="image.mimeType", originalName="image.originalName", dimensions="image.dimensions")
+     *
+     * @var File|null
+     */
+    private $imageFile;
+
+    /**
+     * @ORM\Embedded(class="Vich\UploaderBundle\Entity\File")
+     *
+     * @var EmbeddedFile
      */
     private $image;
 
     /**
-     * @var \TypeArticle
+     * @var TypeArticle
      *
      * @ORM\ManyToOne(targetEntity="TypeArticle")
      * @ORM\JoinColumns({
@@ -58,6 +73,11 @@ class Article
      * })
      */
     private $typeArticle;
+
+    public function __construct()
+    {
+        $this->image = new EmbeddedFile();
+    }
 
     public function getId(): ?int
     {
@@ -100,16 +120,14 @@ class Article
         return $this;
     }
 
-    public function getImage(): ?string
-    {
-        return $this->image;
-    }
-
-    public function setImage(string $image): self
+    public function setImage(EmbeddedFile $image): void
     {
         $this->image = $image;
+    }
 
-        return $this;
+    public function getImage(): ?EmbeddedFile
+    {
+        return $this->image;
     }
 
     public function getTypeArticle(): ?TypeArticle
@@ -124,5 +142,22 @@ class Article
         return $this;
     }
 
+    /**
+     * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
+     * of 'UploadedFile' is injected into this setter to trigger the  update. If this
+     * bundle's configuration parameter 'inject_on_load' is set to 'true' this setter
+     * must be able to accept an instance of 'File' as the bundle will inject one here
+     * during Doctrine hydration.
+     *
+     * @param File|UploadedFile|null $imageFile
+     */
+    public function setImageFile(?File $imageFile = null)
+    {
+        $this->imageFile = $imageFile;
+    }
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+    }
 
 }

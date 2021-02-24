@@ -20,7 +20,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca936695-dcb5-4603-baad-e5e604f02250" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/article/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/e-commerce.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/e-commerce.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ArticleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Article.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ArticleType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ArticleType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/article/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/create.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/article/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/article_admin/list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article_admin/list.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,6 +150,8 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
       <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/vendor/vich/uploader-bundle" />
+      <path value="$PROJECT_DIR$/vendor/jms/metadata" />
     </include_path>
   </component>
   <component name="ProjectId" id="1oVmUf75h5f8hvkCZ1NBlL9Fb5O" />
@@ -149,6 +164,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="Symfony2.SettingsForm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -164,7 +180,15 @@
       <workItem from="1613506452087" duration="9000" />
       <workItem from="1613552212063" duration="2481000" />
       <workItem from="1613555292590" duration="602000" />
-      <workItem from="1613569440412" duration="835000" />
+      <workItem from="1613569440412" duration="1361000" />
+      <workItem from="1613637001280" duration="710000" />
+      <workItem from="1613723997022" duration="2748000" />
+      <workItem from="1613982314415" duration="6254000" />
+      <workItem from="1614004034143" duration="599000" />
+      <workItem from="1614022572107" duration="161000" />
+      <workItem from="1614022743127" duration="74000" />
+      <workItem from="1614070785389" duration="3373000" />
+      <workItem from="1614095329802" duration="3913000" />
     </task>
     <servers />
   </component>
@@ -184,9 +208,21 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1180" y="246" key="NewPhpClassDialog" timestamp="1613554314147">
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1613726148526">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1180" y="246" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613554314147" />
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613726148526" />
+    <state x="1180" y="246" key="NewPhpClassDialog" timestamp="1614158173014">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1180" y="246" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614158173014" />
+    <state x="830" y="100" key="SettingsEditor" timestamp="1614072480612">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="830" y="100" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1614072480612" />
+    <state x="1147" y="123" width="585" height="801" key="find.popup" timestamp="1614072421049">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1147" y="123" width="585" height="801" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1614072421049" />
   </component>
 </project>

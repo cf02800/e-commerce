@@ -1,0 +1,27 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Articles{% endblock %}
+{% block body %}
+<table>
+    <tr>
+        <th>N°</th>
+        <th>Libellé</th>
+        <th>Description</th>
+        <th>Prix</th>
+        <th></th>
+    </tr>
+    {% for a in articles %}
+    <tr>
+        <td>{{ a.id }}</td>
+        <td>{{ a.libelle }}</td>
+        <td>{{ a.description }}</td>
+        <td>{{ a.prixU }}</td>
+        <td>
+            <a href="{{ path('article_show', {id: a.id}) }}">Show</a>
+            <a href="{{ path('article_edit', {id: a.id}) }}">Edit</a>
+            <a href="{{ path('article_delete', {id: a.id}) }}" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce produit ?')">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
