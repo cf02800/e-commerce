@@ -20,12 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca936695-dcb5-4603-baad-e5e604f02250" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/admin/categories/list.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/categorie/edit.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ArticleController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/CategorieController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CategorieController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Categorie.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Categorie.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/categorie/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/categorie/create.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/TypeArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TypeArticleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/article/list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/article/list.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/categories/list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/categories/list.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/types/list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/types/list.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +192,7 @@
       <workItem from="1614095329802" duration="4184000" />
       <workItem from="1614326021800" duration="682000" />
       <workItem from="1614327456939" duration="1885000" />
-      <workItem from="1614586174759" duration="6530000" />
+      <workItem from="1614586174759" duration="6934000" />
     </task>
     <servers />
   </component>

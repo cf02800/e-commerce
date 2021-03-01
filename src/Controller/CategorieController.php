@@ -26,6 +26,8 @@ class CategorieController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($categorie);
             $entityManager->flush();
+
+            return $this->redirectToRoute('categorie_admin');
         }
 
         return $this->render(

@@ -14,7 +14,7 @@ class TypeArticleController extends AbstractController
 {
 
     /**
-     * @Route("/type_article/new", name="type_article")
+     * @Route("/type_article/new", name="type_article_create")
      */
     public function create(Request $request): Response
     {
@@ -27,6 +27,8 @@ class TypeArticleController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($type_article);
             $entityManager->flush();
+
+            return $this->redirectToRoute('type_article_admin');
         }
 
         return $this->render(

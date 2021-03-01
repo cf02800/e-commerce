@@ -31,7 +31,7 @@ class ArticleController extends AbstractController
             $entityManager->persist($article);
             $entityManager->flush();
 
-            // return $this->redirectToRoute('app_product_list');
+            return $this->redirectToRoute('article_admin');
         }
 
 
