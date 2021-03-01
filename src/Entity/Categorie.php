@@ -28,6 +28,11 @@ class Categorie
      */
     private $libelle;
 
+    /**
+     * @ORM\OneToMany(targetEntity="TypeArticle", mappedBy="categorie", orphanRemoval=true)
+     */
+    private $typesArticle;
+
     public function getId(): ?int
     {
         return $this->id;

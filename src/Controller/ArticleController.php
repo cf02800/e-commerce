@@ -15,18 +15,9 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 
 class ArticleController extends AbstractController
 {
-    /**
-     * @Route("/article", name="article")
-     */
-    public function index(): Response
-    {
-        return $this->render('article/index.html.twig', [
-            'controller_name' => 'ArticleController',
-        ]);
-    }
 
     /**
-     * @Route("/article/new", name="article_createp")
+     * @Route("/article/new", name="article_create")
      */
     public function create(Request $request, SluggerInterface $slugger): Response
     {
@@ -40,7 +31,7 @@ class ArticleController extends AbstractController
             $entityManager->persist($article);
             $entityManager->flush();
 
-            // return $this->redirectToRoute('app_product_list');
+            return $this->redirectToRoute('article_admin');
         }
 
 
@@ -143,7 +134,7 @@ class ArticleController extends AbstractController
             ->getRepository(Article::class)
             ->findAll();
 
-        return $this->render('article_admin/list.html.twig', [
+        return $this->render('admin/article/list.html.twig', [
             'articles' => $articles
         ]);
     }

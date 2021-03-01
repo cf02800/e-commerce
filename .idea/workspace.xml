@@ -20,20 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca936695-dcb5-4603-baad-e5e604f02250" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/article/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/e-commerce.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/e-commerce.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ArticleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Article.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ArticleType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ArticleType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/article/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/create.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/article/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/article_admin/list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article_admin/list.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CategorieController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CategorieController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/TypeArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TypeArticleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/article/list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/article/list.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/categories/list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/categories/list.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/types/list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/types/list.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,10 +155,18 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../cours-symfony-session-panier-master" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="Symfony2.SettingsForm" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Documents\boulot\LICENCE PRO\e-commerce\templates\admin\article" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Documents\boulot\LICENCE PRO\e-commerce\public\css" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -188,7 +189,10 @@
       <workItem from="1614022572107" duration="161000" />
       <workItem from="1614022743127" duration="74000" />
       <workItem from="1614070785389" duration="3373000" />
-      <workItem from="1614095329802" duration="3913000" />
+      <workItem from="1614095329802" duration="4184000" />
+      <workItem from="1614326021800" duration="682000" />
+      <workItem from="1614327456939" duration="1885000" />
+      <workItem from="1614586174759" duration="6934000" />
     </task>
     <servers />
   </component>
@@ -208,14 +212,18 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1613726148526">
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1614606513383">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613726148526" />
-    <state x="1180" y="246" key="NewPhpClassDialog" timestamp="1614158173014">
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614606513383" />
+    <state x="260" y="278" key="FileChooserDialogImpl" timestamp="1614586866402">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1180" y="246" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614158173014" />
+    <state x="260" y="278" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1614586866402" />
+    <state x="1180" y="246" key="NewPhpClassDialog" timestamp="1614588592450">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1180" y="246" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614588592450" />
     <state x="830" y="100" key="SettingsEditor" timestamp="1614072480612">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

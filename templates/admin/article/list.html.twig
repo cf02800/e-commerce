@@ -2,12 +2,16 @@
 
 {% block title %}Articles{% endblock %}
 {% block body %}
+<button>
+    <a href="{{ path('article_create')}}">Create</a>
+</button>
 <table>
     <tr>
         <th>N°</th>
         <th>Libellé</th>
         <th>Description</th>
         <th>Prix</th>
+        <th>Type</th>
         <th></th>
     </tr>
     {% for a in articles %}
@@ -16,6 +20,7 @@
         <td>{{ a.libelle }}</td>
         <td>{{ a.description }}</td>
         <td>{{ a.prixU }}</td>
+        <td>{{ a.typeArticle.libelle }}</td>
         <td>
             <a href="{{ path('article_show', {id: a.id}) }}">Show</a>
             <a href="{{ path('article_edit', {id: a.id}) }}">Edit</a>
