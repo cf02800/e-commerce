@@ -29,6 +29,11 @@ class TypeArticle
     private $libelle;
 
     /**
+     * @ORM\OneToMany(targetEntity="Article", mappedBy="typeArticle", orphanRemoval=true)
+     */
+    private $articles;
+
+    /**
      * @var \Categorie
      *
      * @ORM\ManyToOne(targetEntity="Categorie")
@@ -66,6 +71,5 @@ class TypeArticle
 
         return $this;
     }
-
 
 }
