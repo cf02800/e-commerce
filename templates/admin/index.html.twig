@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin{% endblock %}
+
+{% block body %}
+<button type="button">
+    <a href="{{ path('article_admin') }}">Produits</a>
+</button>
+    <button>
+        <a href="{{ path('type_article_admin')}}">Types de produits</a>
+    </button>
+    <button>
+        <a href="{{ path('categories_admin')}}">Catégories</a>
+    </button>
+{% endblock %}
