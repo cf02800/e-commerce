@@ -20,13 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca936695-dcb5-4603-baad-e5e604f02250" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/navbar.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ArticleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CategorieController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CategorieController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/TypeArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TypeArticleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/article/list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/article/list.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/categories/list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/categories/list.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/types/list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/types/list.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/PanierController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PanierController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +193,19 @@
       <workItem from="1614095329802" duration="4184000" />
       <workItem from="1614326021800" duration="682000" />
       <workItem from="1614327456939" duration="1885000" />
-      <workItem from="1614586174759" duration="6934000" />
+      <workItem from="1614586174759" duration="7628000" />
+      <workItem from="1614671771128" duration="608000" />
+      <workItem from="1614846035822" duration="1200000" />
+      <workItem from="1614862600232" duration="16000" />
+      <workItem from="1614862746957" duration="29000" />
+      <workItem from="1614929706989" duration="5000" />
+      <workItem from="1614948435346" duration="8000" />
+      <workItem from="1614952816200" duration="5000" />
+      <workItem from="1615277080933" duration="2275000" />
+      <workItem from="1615295726738" duration="4000" />
+      <workItem from="1615299717315" duration="11000" />
+      <workItem from="1615365900770" duration="3213000" />
+      <workItem from="1615383170144" duration="176000" />
     </task>
     <servers />
   </component>
@@ -216,10 +229,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614606513383" />
-    <state x="260" y="278" key="FileChooserDialogImpl" timestamp="1614586866402">
+    <state x="260" y="278" key="FileChooserDialogImpl" timestamp="1614675403297">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="260" y="278" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1614586866402" />
+    <state x="260" y="278" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1614675403297" />
     <state x="1180" y="246" key="NewPhpClassDialog" timestamp="1614588592450">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
