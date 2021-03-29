@@ -29,5 +29,16 @@
             </tr>
         {% endfor %}
         </tbody>
+        <tfoot>
+        <tr>
+            <td colspan=3></td>
+            <td>{{ total }}</td>
+            <td>
+                <a href='{{ path('commande') }}' class="btn btn-dark btn-sm">
+                    Commander
+                </a>
+            </td>
+        </tr>
+        </tfoot>
     </table>
 {% endblock %}

@@ -13,10 +13,10 @@
             <a class="nav-link" href="{{ path('panier') }}">Panier</a>
         </li>
     </ul>
-    <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#register">
-            Register
+    <button type="button" class="btn btn-light" onclick="window.location.href='{{ path('user_registration') }}';">
+        Register
     </button>
-    <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#login">
+    <button type="button" class="btn btn-light" onclick="window.location.href='{{ path('app_login') }}';">
         Login
     </button>
     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
@@ -26,5 +26,3 @@
     {% endif %}
 </nav>
 
-{{ render(controller('App\\Controller\\RegistrationController::register', {})) }}
-{{ render(controller('App\\Controller\\SecurityController::login', {})) }}

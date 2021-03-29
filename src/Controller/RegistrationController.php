@@ -14,6 +14,10 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class RegistrationController extends AbstractController
 {
+    /**
+     * @Route("/register", name="user_registration")
+     */
+
     public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder) : Response
     {
         // 1) build the form
@@ -35,8 +39,6 @@ class RegistrationController extends AbstractController
             $entityManager->persist($client);
             $entityManager->flush();
 
-            // ... do any other work - like sending them an email, etc
-            // maybe set a "flash" success message for the user
         }
 
         return $this->render(
