@@ -69,4 +69,12 @@ class PanierService
         return $total;
     }
 
+    public function clear(){
+        $panier = [];
+
+        $this->session->set('panier', $panier);
+
+    }
+
+
 }

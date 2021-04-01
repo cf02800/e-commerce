@@ -44,12 +44,14 @@
                     {% for adresse in adresses %}
                         <option value={{adresse.id}}>{{adresse.adresse}} {{adresse.cp}} {{adresse.ville}} {{adresse.pays}}</option>
                     {% endfor %}
-                    <option value="new">Nouvelle adresse</option>
                 </select>
             {% endif %}
-            <a <a href='{{ path('adresse_create') }}'>Créer une nouvelle adresse ?</a>
+            <a href='{{ path('adresse_create') }}'>Créer une nouvelle adresse ?</a>
         </div>
-        <div><button class="btn btn-outline-dark m-3" id='valide'>Valider la commande</button></div>
+        <div>
+            <div><button class="btn btn-outline-dark m-3" id='valide'>Valider la commande</button></div>
+        </div>
     </div>
 
+    {% block javascript %}<script src="/js/validationCommande.js"></script>{% endblock %}
 {% endblock %}

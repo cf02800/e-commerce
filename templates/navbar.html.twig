@@ -13,16 +13,19 @@
             <a class="nav-link" href="{{ path('panier') }}">Panier</a>
         </li>
     </ul>
-    <button type="button" class="btn btn-light" onclick="window.location.href='{{ path('user_registration') }}';">
-        Register
-    </button>
-    <button type="button" class="btn btn-light" onclick="window.location.href='{{ path('app_login') }}';">
-        Login
-    </button>
-    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-        <button type="button" class="btn btn-light" onclick="window.location.href='{{ path('app_logout') }}';">
-            Logout
-        </button>
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <button type="button" class="btn btn-light" onclick="window.location.href='{{ path('app_logout') }}';">
+                Logout
+            </button>
+        {% else %}
+            <button type="button" class="btn btn-light" onclick="window.location.href='{{ path('user_registration') }}';">
+                Register
+            </button>
+            <button type="button" class="btn btn-light" onclick="window.location.href='{{ path('app_login') }}';">
+                Login
+            </button>
     {% endif %}
+
+
 </nav>
 

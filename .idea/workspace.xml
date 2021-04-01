@@ -20,16 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca936695-dcb5-4603-baad-e5e604f02250" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Repository/AdresseRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/ClientRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/adresse/form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/validationCommande.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/ModePaiementRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/StatutCommandeRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/vich_uploader.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/vich_uploader.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CommandeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CommandeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Commande.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Commande.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/Panier/PanierService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/Panier/PanierService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/article/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/commande/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/commande/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/navbar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navbar.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/panier/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/panier/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,6 +224,12 @@
       <workItem from="1615988664986" duration="298000" />
       <workItem from="1616052833444" duration="122000" />
       <workItem from="1616055783906" duration="18000" />
+      <workItem from="1617032367656" duration="13000" />
+      <workItem from="1617087047841" duration="4864000" />
+      <workItem from="1617098850381" duration="2738000" />
+      <workItem from="1617115698446" duration="1264000" />
+      <workItem from="1617179601909" duration="1618000" />
+      <workItem from="1617276906993" duration="2969000" />
     </task>
     <servers />
   </component>
@@ -242,19 +249,20 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1614606513383">
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1617281713547">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614606513383" />
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1617281713547" />
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1617099940644" />
     <state x="260" y="278" key="FileChooserDialogImpl" timestamp="1614675403297">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="260" y="278" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1614675403297" />
-    <state x="1180" y="246" key="NewPhpClassDialog" timestamp="1617006995424">
+    <state x="1180" y="246" key="NewPhpClassDialog" timestamp="1617095679346">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1180" y="246" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1617006995424" />
-    <state x="1180" y="246" key="NewPhpClassDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1615814540880" />
+    <state x="1180" y="246" key="NewPhpClassDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1617095679346" />
     <state x="2750" y="100" key="SettingsEditor" timestamp="1616055812026">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
