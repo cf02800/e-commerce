@@ -8,15 +8,17 @@ use App\Entity\Client;
 use App\Form\ClientType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class RegistrationController extends AbstractController
 {
     /**
-     * @Route("/register", name="client_register")
+     * @Route("/register", name="user_registration")
      */
-    public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder)
+
+    public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder) : Response
     {
         // 1) build the form
         $client = new Client();
@@ -37,8 +39,6 @@ class RegistrationController extends AbstractController
             $entityManager->persist($client);
             $entityManager->flush();
 
-            // ... do any other work - like sending them an email, etc
-            // maybe set a "flash" success message for the user
         }
 
         return $this->render(

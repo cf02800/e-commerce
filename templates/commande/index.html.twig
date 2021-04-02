@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Commande{% endblock %}
+
+{% block body %}
+
+
+    <div class="commande">
+        <h3>Recapitulatif de commande</h3>
+        <table class="container">
+            <thead>
+            <tr>
+                <th>Article</th>
+                <th>Prix Unitaire</th>
+                <th>Quantité</th>
+                <th>Montant</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for ligne in panier %}
+                <tr class="ligne-de-commande">
+                    <td>{{ ligne.article.libelle }}</td>
+                    <td>{{ ligne.article.prixU }}€</td>
+                    <td>{{ ligne.quantity }}</td>
+                    <td>{{ ligne.article.prixU * ligne.quantity }}€</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="4" class="text-right">Total</td>
+                <td class="text-right">{{ prixTot }}€</td>
+            </tr>
+            </tfoot>
+        </table>
+
+        <div>
+            <h3>Adresse de livraison</h3>
+            <h1 class="m-3">Vos adresses</h1>
+            {% if adresses is empty %}
+                <p>Vous n'avez pas d'adresse enregistrée</p>
+            {% else %}
+                <select id='adresse' class="form-control col-6 m-3">
+                    {% for adresse in adresses %}
+                        <option value={{adresse.id}}>{{adresse.adresse}} {{adresse.cp}} {{adresse.ville}} {{adresse.pays}}</option>
+                    {% endfor %}
+                </select>
+            {% endif %}
+            <a href='{{ path('adresse_create') }}'>Créer une nouvelle adresse ?</a>
+        </div>
+        <div>
+            <div><button class="btn btn-outline-dark m-3" id='valide'>Valider la commande</button></div>
+        </div>
+    </div>
+
+    {% block javascript %}<script src="/js/validationCommande.js"></script>{% endblock %}
+{% endblock %}

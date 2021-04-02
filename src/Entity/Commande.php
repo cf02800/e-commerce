@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -29,13 +30,6 @@ class Commande
     private $date;
 
     /**
-     * @var float
-     *
-     * @ORM\Column(name="frais_de_port", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $fraisDePort;
-
-    /**
      * @var \Client
      *
      * @ORM\ManyToOne(targetEntity="Client")
@@ -54,6 +48,12 @@ class Commande
      * })
      */
     private $modePaiement;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\LigneDeCommande", mappedBy="commande", cascade={"persist"})
+     */
+    private $lignes_de_commande;
+
 
     /**
      * @var \Adresse
@@ -92,14 +92,30 @@ class Commande
         return $this;
     }
 
-    public function getFraisDePort(): ?float
+    /**
+     * @return Collection|LigneDeCommande[]
+     */
+    public function getLignesDeCommande(): Collection
     {
-        return $this->fraisDePort;
+        return $this->lignes_de_commande;
     }
 
-    public function setFraisDePort(float $fraisDePort): self
+    public function addLigneDeCommande(LigneDeCommande $ligneDeCommande): self
     {
-        $this->fraisDePort = $fraisDePort;
+        $this->lignes_de_commande[] = $ligneDeCommande;
+        $ligneDeCommande->setCommandeId($this->getId());
+        return $this;
+    }
+
+    public function removeLigneDeCommande(LigneDeCommande $ligneDeCommande): self
+    {
+        if ($this->lignes_de_commande->contains($ligneDeCommande)) {
+            $this->lignes_de_commande->removeElement($ligneDeCommande);
+            // set the owning side to null (unless already changed)
+            if ($ligneDeCommande->getCommandeId() === $this) {
+                $ligneDeCommande->setCommandeId(null);
+            }
+        }
 
         return $this;
     }

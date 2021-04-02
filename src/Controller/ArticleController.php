@@ -115,9 +115,6 @@ class ArticleController extends AbstractController
     public function delete(Article $article): RedirectResponse
     {
 
-        $oldImage = $article->getImage();
-        unlink($this->getParameter('images_dossier').'/'.$oldImage);
-
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->remove($article);
         $entityManager->flush();
