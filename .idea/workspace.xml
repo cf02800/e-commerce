@@ -20,37 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca936695-dcb5-4603-baad-e5e604f02250" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/CommandeRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/commande/edit.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/commande/list.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/LigneCommandeRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/Commande/CommandeService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ArticleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CommandeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CommandeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/TypeArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TypeArticleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Commande.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Commande.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/LigneDeCommande.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/LigneDeCommande.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/article/list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/article/list.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/categories/list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/categories/list.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/CommandeType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/CommandeType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/admin/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/types/list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/types/list.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/adresse/form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/adresse/form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/app/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/article/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/create.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/article/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/article/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/article/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/categorie/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/categorie/create.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/categorie/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/categorie/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/commande/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/commande/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/navbar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navbar.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/panier/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/panier/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/type_article/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/type_article/create.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/type_article/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/type_article/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/type_article/index.html.twig" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,11 +173,12 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Documents\boulot\LICENCE PRO\e-commerce\templates\admin\article" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Documents\boulot\LICENCE PRO\e-commerce\public\css" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Documents\boulot\LICENCE PRO\e-commerce\src\Service\Commande" />
+      <recent name="D:\Documents\boulot\LICENCE PRO\e-commerce\templates\admin\article" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -259,6 +237,9 @@
       <workItem from="1617709118587" duration="8000" />
       <workItem from="1617780062805" duration="2586000" />
       <workItem from="1617798248043" duration="5850000" />
+      <workItem from="1617865811289" duration="842000" />
+      <workItem from="1617871011808" duration="152000" />
+      <workItem from="1617871182656" duration="2357000" />
     </task>
     <servers />
   </component>
@@ -287,10 +268,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="260" y="278" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1614675403297" />
-    <state x="1180" y="246" key="NewPhpClassDialog" timestamp="1617803733329">
+    <state x="1180" y="246" key="NewPhpClassDialog" timestamp="1617883920686">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1180" y="246" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1617803733329" />
+    <state x="1180" y="246" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1617883920686" />
     <state x="1180" y="246" key="NewPhpClassDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1617095679346" />
     <state x="739" y="222" key="RollbackChangesDialog" timestamp="1617288167464">
       <screen x="0" y="0" width="1920" height="1040" />

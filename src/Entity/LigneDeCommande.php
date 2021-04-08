@@ -55,7 +55,7 @@ class LigneDeCommande
         return $this->id;
     }
 
-    public function getArticleId(): \Article
+    public function getArticleId(): ?Article
     {
         return $this->articleId;
     }

@@ -19,7 +19,6 @@ class CommandeType extends AbstractType
                 'choice_label' => function(StatutCommande $t) {
                     return sprintf('%s', $t->getLibelle());
                 },
-                'placeholder' => ""
             ])
         ;
     }
