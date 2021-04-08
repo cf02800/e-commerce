@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Changement de statut{% endblock %}
+{% block body %}
+    <section class="section-content padding-y bg">
+        <div class="container">
+            <div class="card">
+                <article class="card-body">
+                    <header class="mb-4">
+                        <h4 class="card-title">Changement de statut</h4>
+                    </header>
+                    <form class="block-register">
+                        {{ form_start(form) }}
+                        <div class="form-group form-row">
+                            {{ form_row(form.statutCommande) }}
+                        </div>
+
+                        <div class="form-row mb-2">
+                            <button type="submit" class="btn btn-primary">Mettre à jour</button>
+                        </div>
+                        {{ form_end(form) }}
+                    </form>
+                </article> <!-- card-body end .// -->
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

@@ -3,55 +3,71 @@
 {% block title %}Commande{% endblock %}
 
 {% block body %}
+<section class="section-content padding-y bg">
+    <div class="container">
+        <div class="row">
+            <main class="col-md-8">
+                <article class="card mb-4">
 
+                    <!-- Produits dans le panier -->
 
-    <div class="commande">
-        <h3>Recapitulatif de commande</h3>
-        <table class="container">
-            <thead>
-            <tr>
-                <th>Article</th>
-                <th>Prix Unitaire</th>
-                <th>Quantité</th>
-                <th>Montant</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for ligne in panier %}
-                <tr class="ligne-de-commande">
-                    <td>{{ ligne.article.libelle }}</td>
-                    <td>{{ ligne.article.prixU }}€</td>
-                    <td>{{ ligne.quantity }}</td>
-                    <td>{{ ligne.article.prixU * ligne.quantity }}€</td>
-                </tr>
-            {% endfor %}
-            </tbody>
-            <tfoot>
-            <tr>
-                <td colspan="4" class="text-right">Total</td>
-                <td class="text-right">{{ prixTot }}€</td>
-            </tr>
-            </tfoot>
-        </table>
+                    <div class="card-body">
+                        <h4 class="card-title mb-4">Récapitulatif de commande</h4>
+                        <div class="row">
+                            <div class="col-md-6">
+                                {% for ligne in panier %}
+                                    <figure class="itemside  mb-4">
+                                        <div class="aside"><img src="./images/{{ ligne.article.image.name }}" class="border img-sm"></div>
+                                        <figcaption class="info">
+                                            <p>{{ ligne.article.libelle }}</p>
+                                            <span class="text-muted">{{ ligne.article.prixU * ligne.quantity }}€ </span>
+                                        </figcaption>
+                                    </figure>
+                                {% endfor %}
+                            </div> <!-- col.// -->
+                        </div> <!-- row.// -->
+                    </div> <!-- card-body.// -->
+                </article>
+                    <!-- Adresse -->
 
-        <div>
-            <h3>Adresse de livraison</h3>
-            <h1 class="m-3">Vos adresses</h1>
-            {% if adresses is empty %}
-                <p>Vous n'avez pas d'adresse enregistrée</p>
-            {% else %}
-                <select id='adresse' class="form-control col-6 m-3">
-                    {% for adresse in adresses %}
-                        <option value={{adresse.id}}>{{adresse.adresse}} {{adresse.cp}} {{adresse.ville}} {{adresse.pays}}</option>
-                    {% endfor %}
-                </select>
-            {% endif %}
-            <a href='{{ path('adresse_create') }}'>Créer une nouvelle adresse ?</a>
-        </div>
-        <div>
-            <div><button class="btn btn-outline-dark m-3" id='valide'>Valider la commande</button></div>
+                    <article class="card mb-4">
+                        <div class="card-body">
+                            <h4 class="card-title mb-4">Adresse de livraison</h4>
+                            <form action="">
+                                <div class="row">
+                                    <div class="form-group col-sm-6">
+                                        <label>City*</label>
+                                        {% if adresses is empty %}
+                                            <p>Vous n'avez pas d'adresse enregistrée</p>
+                                        {% else %}
+                                            <select id='adresse' class="form-control">
+                                                {% for adresse in adresses %}
+                                                    <option value={{adresse.id}}>{{adresse.adresse}} {{adresse.cp}} {{adresse.ville}} {{adresse.pays}}</option>
+                                                {% endfor %}
+                                            </select>
+                                        {% endif %}
+                                        <a href='{{ path('adresse_create') }}' class="btn btn-outline-dark m-3">Créer une nouvelle adresse ?</a>
+                                    </div>
+                                </div> <!-- row.// -->
+                            </form>
+                        </div> <!-- card-body.// -->
+                    </article>
+            </main>
+            <aside class="col-md-4">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <dl class="dlist-align">
+                            <dt>Total:</dt>
+                            <dd class="h5">{{ prixTot }}€</dd>
+                        </dl>
+                        <hr>
+                        <button class="btn btn-primary btn-block" id='valide'> Passer commande </button>
+
+                    </div> <!-- card-body.// -->
+                </div> <!-- card.// -->
+            </aside>
         </div>
     </div>
-
+</section>
     {% block javascript %}<script src="/js/validationCommande.js"></script>{% endblock %}
 {% endblock %}

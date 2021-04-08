@@ -2,24 +2,30 @@
 
 {% block title %}Categories{% endblock %}
 {% block body %}
-    <button>
-        <a href="{{ path('categorie_create')}}">Create</a>
-    </button>
-    <table>
-        <tr>
-            <th>N°</th>
-            <th>Libellé</th>
-            <th></th>
-        </tr>
-        {% for c in categories %}
+    <section class="section-content padding-y bg">
+    <div class="container">
+        <a class="btn btn-light" href="{{ path('categorie_create')}}">Créer une catégorie</a>
+        <table class="table table-bordered">
+            <thead>
             <tr>
-                <td>{{ c.id }}</td>
-                <td>{{ c.libelle }}</td>
-                <td>
-                    <a href="{{ path('categorie_edit', {id: c.id}) }}">Edit</a>
-                    <a href="{{ path('categorie_delete', {id: c.id}) }}" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette catégorie?')">Delete</a>
-                </td>
+                <th scope="col">#</th>
+                <th scope="col">Libellé</th>
+                <th scope="col"></th>
             </tr>
-        {% endfor %}
-    </table>
+            </thead>
+            <tbody>
+            {% for c in categories %}
+                <tr>
+                    <th scope="row">{{ c.id }}</th>
+                    <td>{{ c.libelle }}</td>
+                    <td>
+                        <a href="{{ path('categorie_edit', {id: c.id}) }}" class="btn btn-light">Modifier</a>
+                        <a href="{{ path('categorie_delete', {id: c.id}) }}" class="btn btn-light" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette catégorie?')">Supprimer</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    </section>
 {% endblock %}

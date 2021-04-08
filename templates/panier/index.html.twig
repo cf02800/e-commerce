@@ -3,42 +3,65 @@
 {% block title %}Panier{% endblock %}
 
 {% block body %}
-    <h1>Panier</h1>
-    <table class="table">
-        <thead>
-        <tr>
-            <th>Produit</th>
-            <th>PrixU</th>
-            <th>Quantité</th>
-            <th>Total</th>
-            <th></th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for item in items %}
-            <tr>
-                <td>{{ item.article.libelle }}</td>
-                <td>{{ item.article.prixU }}</td>
-                <td>{{ item.quantity }}</td>
-                <td>{{ item.article.prixU * item.quantity }}</td>
-                <td>
-                    <a href='{{ path('panier_delete', {id : item.article.id}) }}' class="btn btn-danger btn-sm">
-                        Delete
-                    </a>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-        <tfoot>
-        <tr>
-            <td colspan=3></td>
-            <td>{{ total }}</td>
-            <td>
-                <a href='{{ path('commande') }}' class="btn btn-dark btn-sm">
-                    Commander
-                </a>
-            </td>
-        </tr>
-        </tfoot>
-    </table>
+<section class="section-content padding-y bg">
+    <div class="container">
+        <div class="row">
+            <aside class="col-lg-9">
+                <div class="card">
+                    <div class="table-responsive">
+                        <table class="table table-borderless table-shopping-cart">
+                            <thead class="text-muted">
+                            <tr class="small text-uppercase">
+                                <th scope="col">Produit</th>
+                                <th scope="col" width="120">Quantité</th>
+                                <th scope="col" width="120">Prix</th>
+                                <th scope="col" class="text-right d-none d-md-block" width="200"> </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for item in items %}
+                                <tr>
+                                    <td>
+                                        <figure class="itemside align-items-center">
+                                            <div class="aside"><img src="/images/{{ item.article.image.name }}" class="img-sm"></div>
+                                            <figcaption class="info">
+                                                <a href="#" class="title text-dark">{{ item.article.libelle }}</a>
+                                            </figcaption>
+                                        </figure>
+                                    </td>
+                                    <td>
+                                        <var class="price">{{ item.quantity }}</var>
+                                    </td>
+                                    <td>
+                                        <div class="price-wrap">
+                                            <var class="price">{{ item.article.prixU * item.quantity }}€</var>
+                                            <small class="text-muted"> {{ item.article.prixU }}€</small>
+                                        </div> <!-- price-wrap .// -->
+                                    </td>
+                                    <td class="text-right d-none d-md-block">
+                                        <a href="{{ path('panier_delete', {id : item.article.id}) }}" class="btn btn-light">Supprimer</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+
+                    </div> <!-- table-responsive.// -->
+                </div> <!-- card.// -->
+            </aside> <!-- col.// -->
+            <aside class="col-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <dl class="dlist-align">
+                            <dt>Total:</dt>
+                            <dd class="text-right text-dark b"><strong>{{ total }}€</strong></dd>
+                        </dl>
+                        <hr>
+                        <a href="{{ path('commande') }}" class="btn btn-primary btn-block">Passer Commande </a>
+                    </div> <!-- card-body.// -->
+                </div> <!-- card.// -->
+            </aside> <!-- col.// -->
+        </div> <!-- row.// -->
+    </div>
+</section>
 {% endblock %}

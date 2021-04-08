@@ -1,11 +1,32 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Modification de type d'article{% endblock %}
+{% block title %}Création de type de produit{% endblock %}
 {% block body %}
-    {{ form_start(form) }}
-    {{ form_row(form.libelle) }}
-    {{ form_row(form.categorie) }}
-    <button type="submit">Edit</button>
-    {{ form_end(form) }}
+    <section class="section-content padding-y bg">
+        <div class="container">
+            <div class="card">
+                <article class="card-body">
+                    <header class="mb-4">
+                        <h4 class="card-title">Création de type de produit</h4>
+                    </header>
+                    <form class="block-register">
+                        {{ form_start(form) }}
+                        <div class="form-group form-row">
+                            {{ form_row(form.libelle) }}
+                        </div>
+                        <div class="form-group form-row">
+                            {{ form_row(form.categorie) }}
+                        </div>
+
+                        <div class="form-row mb-2">
+                            <button type="submit" class="btn btn-primary">Créer</button>
+                        </div>
+                        {{ form_end(form) }}
+
+                    </form>
+                </article> <!-- card-body end .// -->
+            </div>
+        </div>
+    </section>
 
 {% endblock %}

@@ -2,26 +2,32 @@
 
 {% block title %}Types d'Articles{% endblock %}
 {% block body %}
-    <button>
-        <a href="{{ path('type_article_create')}}">Create</a>
-    </button>
-    <table>
-        <tr>
-            <th>N°</th>
-            <th>Libellé</th>
-            <th>Catégorie</th>
-            <th></th>
-        </tr>
-        {% for t in types %}
-            <tr>
-                <td>{{ t.id }}</td>
-                <td>{{ t.libelle }}</td>
-                <td>{{ t.categorie.libelle }}</td>
-                <td>
-                    <a href="{{ path('article_edit', {id: t.id}) }}">Edit</a>
-                    <a href="{{ path('type_article_delete', {id: t.id}) }}" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce produit ?')">Delete</a>
-                </td>
-            </tr>
-        {% endfor %}
-    </table>
+    <section class="section-content padding-y bg">
+        <div class="container">
+            <a class="btn btn-light" href="{{ path('type_article_create')}}">Ajouter un type de produit</a>
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Libellé</th>
+                    <th scope="col">Catégorie</th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for t in types %}
+                    <tr>
+                        <th scope="row">{{ t.id }}</th>
+                        <td>{{ t.libelle }}</td>
+                        <td>{{ t.categorie.libelle }}</td>
+                        <td>
+                            <a href="{{ path('type_article_edit', {id: t.id}) }}" class="btn btn-light">Modifier</a>
+                            <a href="{{ path('type_article_delete', {id: t.id}) }}" class="btn btn-light" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce type de produit?')">Supprimer</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
 {% endblock %}

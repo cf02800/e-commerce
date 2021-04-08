@@ -50,9 +50,9 @@ class Commande
     private $modePaiement;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\LigneDeCommande", mappedBy="commande", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="LigneDeCommande", mappedBy="commandeId")
      */
-    private $lignes_de_commande;
+    private $lignes;
 
 
     /**
@@ -97,20 +97,20 @@ class Commande
      */
     public function getLignesDeCommande(): Collection
     {
-        return $this->lignes_de_commande;
+        return $this->lignes;
     }
 
     public function addLigneDeCommande(LigneDeCommande $ligneDeCommande): self
     {
-        $this->lignes_de_commande[] = $ligneDeCommande;
-        $ligneDeCommande->setCommandeId($this->getId());
+        $this->lignes[] = $ligneDeCommande;
+        $ligneDeCommande->setCommandeId($this);
         return $this;
     }
 
     public function removeLigneDeCommande(LigneDeCommande $ligneDeCommande): self
     {
-        if ($this->lignes_de_commande->contains($ligneDeCommande)) {
-            $this->lignes_de_commande->removeElement($ligneDeCommande);
+        if ($this->lignes->contains($ligneDeCommande)) {
+            $this->lignes->removeElement($ligneDeCommande);
             // set the owning side to null (unless already changed)
             if ($ligneDeCommande->getCommandeId() === $this) {
                 $ligneDeCommande->setCommandeId(null);

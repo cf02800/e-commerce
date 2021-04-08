@@ -8,7 +8,9 @@ use App\Entity\LigneDeCommande;
 use App\Entity\ModePaiement;
 use App\Entity\StatutCommande;
 use App\Form\AdresseType;
+use App\Form\CommandeType;
 use App\Form\SelectAdresseType;
+use App\Form\StatutType;
 use App\Service\Panier\PanierService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -66,16 +68,6 @@ class CommandeController extends AbstractController
             ->find($adresse);
         $panier = $this->PanierService->getFullPanier();
 
-        $LignesDeCommande = [];
-
-        foreach($panier as $lignepanier){
-            $ligne = new LigneDeCommande();
-            $ligne->setQte($lignepanier['quantity']);
-            $ligne->setArticleId($lignepanier['article']->getId());
-            $em->persist($ligne);
-
-            $LignesDeCommande[] = $ligne;
-        }
         $modePaiement = $this->getDoctrine()
             ->getRepository(ModePaiement::class)
             ->findOneBy(['id' => "1"]);
@@ -91,19 +83,25 @@ class CommandeController extends AbstractController
         $commande->setModePaiement($modePaiement);
         $commande->setStatutCommande($statut);
 
-        foreach($LignesDeCommande as $ligne){
+        $em->persist($commande);
+        $em->flush();
+        $em->refresh($commande);
+
+
+        foreach($panier as $lignepanier){
+            $ligne = new LigneDeCommande();
+            $ligne->setQte($lignepanier['quantity']);
+            $ligne->setArticleId($lignepanier['article']);
+            $ligne->setCommandeId($commande);
             $commande->addLigneDeCommande($ligne);
+            $em->persist($ligne);
         }
 
-        $em->persist($commande);
         $em->flush();
 
         $this->PanierService->clear();
 
         return $this->redirectToRoute('accueil');
-
-
-
     }
 
     /**
@@ -132,5 +130,48 @@ class CommandeController extends AbstractController
         return $this->render('adresse/form.html.twig', [
             'form' => $formAdresse->createView(),
         ]);
+    }
+
+    /**
+     * @Route("/admin/commandes", name="commandes_admin")
+     */
+    public function getAllCommandes(){
+        $commandes = $this->getDoctrine()
+            ->getRepository(Commande::class)
+            ->findAll();
+
+
+
+        return $this->render('admin/commande/list.html.twig', [
+            'commandes' => $commandes,
+        ]);
+    }
+
+    /**
+     * @Route("admin/commande/{id}", name="statutcommande_edit")
+     */
+
+    public function changeStatut(Request $request, int $id){
+
+        $commande = $this->getDoctrine()
+            ->getRepository(Commande::class)
+            ->find($id);
+
+        $form = $this->createForm(CommandeType::class, $commande);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($commande);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('commande_admin');
+        }
+
+        return $this->render('admin/commande/edit.html.twig',[
+                'form' => $form->createView()
+            ]
+        );
+
     }
 }

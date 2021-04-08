@@ -1,34 +1,19 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Accueil{% endblock %}
+{% block stylesheets %}
+<link href="/css/style.css" rel="stylesheet" />
+{% endblock %}
 
 {% block body %}
-    <div class="container">
-        {% for row in articles|batch(3) %}
-        <div class="row">
-            {% for article in row %}
-            <div class="col-md-3">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="/images/{{ article.image.name }}">
-                    <div class="card-body">
-                        <h1 class="card-title">{{ article.libelle }}</h1>
-                        <p class="card-text">{{ article.description }}</p>
-                        <p>{{ article.prixU }}</p>
-                    </div>
-                    <div class="card-footer ">
-                        <button type="button" class="btn btn-light" onclick="window.location.href='{{ path('article_show', {id: article.id}) }}';">
-                           Voir
-                        </button>
-                        <button type="button" class="btn btn-light" onclick="window.location.href='{{ path('panier_add', {id: article.id}) }}';">
-                            Ajouter
-                        </button>
-                    </div>
+    <header id="banner">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 text-center">
+                    <h1 class="font-weight-light">Bienvenue chez le traiteur !!</h1>
+                    <p class="lead">La suite au prochain apéro...</p>
                 </div>
             </div>
-            {% endfor %}
         </div>
-        {% endfor %}
-    </div>
-
-
+    </header>
 {% endblock %}

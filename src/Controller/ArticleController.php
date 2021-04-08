@@ -17,6 +17,17 @@ class ArticleController extends AbstractController
 {
 
     /**
+     * @Route("/produits", name="produits")
+     */
+    public function index(): Response
+    {
+        $articles = $this->getDoctrine()->getRepository(Article::class)->findAll();
+
+        return $this->render('article/index.html.twig', [
+            'articles' => $articles
+        ]);
+    }
+    /**
      * @Route("/article/new", name="article_create")
      */
     public function create(Request $request, SluggerInterface $slugger): Response
@@ -41,7 +52,7 @@ class ArticleController extends AbstractController
     }
 
     /**
-     * @Route("/article/{id}", name="article_show")
+     * @Route("/article/show/{id}", name="article_show")
      */
 
     public function show(int $id) : Response {
@@ -51,7 +62,6 @@ class ArticleController extends AbstractController
 
         return $this->render('article/show.html.twig', [
             'article' => $article,
-            'dossierImage' => $this->getParameter('images_dossier'),
         ]);
     }
 

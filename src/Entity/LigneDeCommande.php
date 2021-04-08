@@ -22,16 +22,24 @@ class LigneDeCommande
     private $id;
 
     /**
-     * @var int|null
+     * /**
+     * @var \Article
      *
-     * @ORM\Column(name="article_id", type="integer", nullable=true)
+     * @ORM\ManyToOne(targetEntity="Article")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="article_id", referencedColumnName="id")
+     * })
      */
     private $articleId;
 
     /**
-     * @var int|null
+     * /**
+     * @var \Commande
      *
-     * @ORM\Column(name="commande_id", type="integer", nullable=true)
+     * @ORM\ManyToOne(targetEntity="Commande")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="commande_id", referencedColumnName="id")
+     * })
      */
     private $commandeId;
 
@@ -47,24 +55,24 @@ class LigneDeCommande
         return $this->id;
     }
 
-    public function getArticleId(): ?int
+    public function getArticleId(): \Article
     {
         return $this->articleId;
     }
 
-    public function setArticleId(?int $articleId): self
+    public function setArticleId(?Article $articleId): self
     {
         $this->articleId = $articleId;
 
         return $this;
     }
 
-    public function getCommandeId(): ?int
+    public function getCommandeId(): \Commande
     {
         return $this->commandeId;
     }
 
-    public function setCommandeId(?int $commandeId): self
+    public function setCommandeId(?Commande $commandeId): self
     {
         $this->commandeId = $commandeId;
 

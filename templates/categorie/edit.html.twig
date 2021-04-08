@@ -2,9 +2,27 @@
 
 {% block title %}Modification de catégorie{% endblock %}
 {% block body %}
-    {{ form_start(form) }}
-    {{ form_row(form.libelle) }}
-    <button type="submit">Create</button>
-    {{ form_end(form) }}
+    <section class="section-content padding-y bg">
+        <div class="container">
+            <div class="card">
+                <article class="card-body">
+                    <header class="mb-4">
+                        <h4 class="card-title">Modification de catégorie</h4>
+                    </header>
+                    <form class="block-register">
+                        {{ form_start(form) }}
+                        <div class="form-group form-row">
+                            {{ form_row(form.libelle) }}
+                        </div>
+
+                        <div class="form-row mb-2">
+                            <button type="submit" class="btn btn-primary">Modifier</button>
+                        </div>
+                        {{ form_end(form) }}
+                    </form>
+                </article> <!-- card-body end .// -->
+            </div>
+        </div>
+    </section>
 
 {% endblock %}

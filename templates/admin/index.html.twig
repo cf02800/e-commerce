@@ -3,13 +3,104 @@
 {% block title %}Admin{% endblock %}
 
 {% block body %}
-<button type="button">
-    <a href="{{ path('article_admin') }}">Produits</a>
-</button>
-    <button>
-        <a href="{{ path('type_article_admin')}}">Types de produits</a>
-    </button>
-    <button>
-        <a href="{{ path('categories_admin')}}">Catégories</a>
-    </button>
+<section class="section-content padding-y bg">
+    <div class="container">
+        <h1 class="section-title text-center">Administrateur</h1><br>
+        <div class="row">
+            <div class="col-md-4">
+                <article class="card card-body">
+                    <figure class="text-center">
+                        <span class="rounded-circle icon-md bg-success"><i class="fas fa-euro-sign white"></i></span>
+                        <figcaption class="pt-4">
+                            <h5 class="title">Chiffre d'affaires</h5>
+                            <p>15.56 €</p>
+                        </figcaption>
+                    </figure> <!-- iconbox // -->
+                </article> <!-- panel-lg.// -->
+            </div><!-- col // -->
+            <div class="col-md-4">
+                <article class="card card-body">
+                    <figure class="text-center">
+                        <span class="rounded-circle icon-md bg-danger"><i class="fas fa-hourglass-start white"></i></span>
+                        <figcaption class="pt-4">
+                            <h5 class="title">Nombre de commandes en attente</h5>
+                            <p>1</p>
+                        </figcaption>
+                    </figure> <!-- iconbox // -->
+                </article> <!-- panel-lg.// -->
+            </div> <!-- col // -->
+            <div class="col-md-4">
+                <article class="card card-body">
+                    <figure class="text-center">
+                        <span class="rounded-circle icon-md bg-success"><i class="fas fa-check white"></i></span>
+                        <figcaption class="pt-4">
+                            <h5 class="title">Nombre de commandes terminées</h5>
+                            <p>0</p>
+                        </figcaption>
+                    </figure> <!-- iconbox // -->
+                </article> <!-- panel-lg.// -->
+            </div> <!-- col // -->
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-3">
+                <article class="card card-body">
+                    <figure class="itemside">
+                        <div class="aside">
+                            <span class="icon-sm rounded-circle bg-primary">
+                            <i class="fas fas fa-cog white"></i>
+                            </span>
+                        </div>
+                        <figcaption class="info">
+                            <a href="{{ path('categories_admin') }}"><strong>Catégories</strong></a>
+                        </figcaption>
+                    </figure> <!-- iconbox // -->
+                </article> <!-- panel-lg.// -->
+            </div><!-- col // -->
+            <div class="col-md-3">
+                <article class="card card-body">
+                    <figure class="itemside">
+                        <div class="aside">
+                            <span class="icon-sm rounded-circle bg-primary">
+                            <i class="fas fas fa-cog white"></i>
+                            </span>
+                        </div>
+                        <figcaption class="info">
+                            <a href="{{ path('type_article_admin') }}"><strong>Types de produits</strong></a>
+                        </figcaption>
+                    </figure> <!-- iconbox // -->
+                </article> <!-- panel-lg.// -->
+            </div><!-- col // -->
+            <div class="col-md-3">
+                <article class="card card-body">
+                    <figure class="itemside">
+                        <div class="aside">
+                            <span class="icon-sm rounded-circle bg-primary">
+                            <i class="fas fas fa-cog white"></i>
+                            </span>
+                        </div>
+                        <figcaption class="info">
+                            <a href="{{ path('article_admin') }}"><strong>Produits</strong></a>
+                        </figcaption>
+                    </figure> <!-- iconbox // -->
+                </article> <!-- panel-lg.// -->
+            </div><!-- col // -->
+            <div class="col-md-3">
+                <article class="card card-body">
+                    <figure class="itemside">
+                        <div class="aside">
+                        <span class="icon-sm rounded-circle bg-primary">
+                            <i class="fas fas fa-cog white"></i>
+                        </span>
+                        </div>
+                        <figcaption class="info">
+                            <a href="{{ path('commandes_admin') }}"><strong>Commandes</strong></a>
+                        </figcaption>
+                    </figure> <!-- iconbox // -->
+                </article> <!-- panel-lg.// -->
+            </div><!-- col // -->
+        </div>
+    </div>
+</section>
+
 {% endblock %}

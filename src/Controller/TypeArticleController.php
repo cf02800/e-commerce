@@ -50,6 +50,8 @@ class TypeArticleController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($type);
             $entityManager->flush();
+
+            return $this->redirectToRoute('type_article_admin');
         }
 
         return $this->render('type_article/edit.html.twig',[
